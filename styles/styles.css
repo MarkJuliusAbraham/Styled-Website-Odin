@@ -2,8 +2,10 @@
     --edge-margin: 60px;
     --common-border-rad: 4px;
     --default-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-}
+    --main-color: rgb(168, 36, 36);
+    --helper-color: rgb(15, 5, 5);
+    --secondary-color: rgb(172, 58, 58);
+}   
 
 * {
     margin: 0;
@@ -15,16 +17,15 @@ p{
     color: rgb(198, 198, 198)
 }
 
-h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(255, 193, 118);
+h1{
+    color: white;
 }
 
 div{
     background-color: transparent;
-    /* outline: 5px solid red; */
-    /* border-style: solid; */
-    border-width: 1px;
+
+    /* border-style: solid;
+    border-width: 1px; */
 }
 
 img{
@@ -33,15 +34,17 @@ img{
 }
 
 body{
-    background-color: gray;
+    background-color:  var(--helper-color);
 
 }
 
 .header-container{
-
+    border-style: solid;
+    border-color: var(--main-color);
+    border-radius: var(--common-border-rad);
     height: 90px;
     display: flex;
-    margin: 0px var(--edge-margin) 0px;
+    margin: 12px var(--edge-margin) 0px;
 }
 
 .header-item{
@@ -63,7 +66,8 @@ body{
 
 .header-title-text{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: whitesmoke;
+    font-size: 28px;
+    color: var(--main-color);
 }
 
 #header-left{
@@ -71,7 +75,7 @@ body{
 }
 
 #header-right{
-    justify-content: right;
+    justify-content: center;
 }
 
 .header-link-div{
@@ -86,10 +90,10 @@ body{
     font-size: 18px;
     background-color: transparent;
     border-color: transparent;
-    color: whitesmoke;
-
+    color: var(--main-color);
     display: flex;
     align-items: center;
+    padding: 0px 12px 0px;
 }
 
 /* .header-contents{
@@ -98,7 +102,8 @@ body{
 
 .feature-block-container{
     display: flex;  
-    margin: 120px var(--edge-margin) 160px;
+    margin: auto var(--edge-margin) auto;
+    padding: 100px;
 }
 
 .feature-child{
@@ -131,15 +136,16 @@ body{
 
 .feature-title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: whitesmoke;
+    color: var(--main-color);
     font-size: 48px;
     padding: 12px;
 }
 
 .feature-paragraph{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: aliceblue;
+    color: var(--main-color);
     padding: 12px;
+    line-height: 2;
 }
 
 .feature-sign-up-button{
@@ -151,19 +157,19 @@ body{
     padding: 6px 24px 6px;
     border-radius: 4px;
     border-color: transparent;
-    background-color: black;
-    color: whitesmoke;
+    background-color: var(--secondary-color);
+    color: var(--helper-color);
 }
 
 .feature-sign-up-button:hover{
-    background-color: darkgray;
-    color: black;
+    background-color: whitesmoke;
+    color: var(--secondary-color);
     cursor: pointer;
     
 }
 
 .feature-sign-up-button:active{
-    background-color: rgb(75, 75, 75);
+    background-color: var(--main-color);
     color: whitesmoke;
 }
 
@@ -172,8 +178,10 @@ body{
 }
 
 .mainbody{
-    margin: 0px var(--edge-margin) 0px;
-    background-color: whitesmoke;
+    margin: 0px 0px 0px;
+    background-color: var(--secondary-color);
+    /* border-radius: var(--common-border-rad); */
+    padding: 80px 48px 80px;
 }
 
 .mainbody .header-title-div{
@@ -185,8 +193,174 @@ body{
     display: flex;
     justify-content: center;
     padding: 40px 0px 40px;
+    margin-bottom: 80px;
 }
 
 .mainbody .main-header{
     font-family: var(--default-font-family);
+    color: var(--helper-color);
+}
+
+.mainbody .body-case{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 80px;
+}
+
+.slot{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.mainbody .casing{
+    align-self: center;
+    margin: 12px 0px 12px;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: var(--common-border-rad);
+}
+
+
+.slot .description{
+    padding: 2px;
+    color: black;
+    text-align: center;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    padding: 160px 0px 160px;
+
+}
+
+.about-items{
+    flex: 1;
+    padding: 180px var(--edge-margin) 0px;
+}
+
+.about .title-container{
+    padding: 0px var(--edge-margin) 0px;
+
+}
+
+.about .title{
+    border-style: solid;
+    border-color: var(--main-color);
+    border-radius: var(--common-border-rad);
+    padding: 24px 0px 24px;
+    font-family: var(--default-font-family);
+}
+
+.about .header{
+    font-size: 28px;
+}
+
+.about .text{
+
+    text-align: center;
+}
+
+.about .description{
+    padding: 0px 120px 0px;
+}
+
+.about .description-text{
+    font-size: 22px;
+    line-height: 2;
+}
+
+.about .date-description{
+    
+    padding-top: 24px;
+
+}
+
+.about .date-text{
+    text-align: right;
+    font-size: 22px;
+}
+
+.closing-block{
+
+    padding: 80px var(--edge-margin) 80px;
+    display: flex;
+    background-color: var(--main-color);
+}
+
+.closing-block .banner{
+    flex: 1;
+    background-color: var(--helper-color);
+    border-radius: var(--common-border-rad);
+    display: flex;
+    padding: 24px;
+}
+
+.closing-block .left{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    
+}
+.closing-block .right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closing-block .banner-header{
+    flex: 2;
+}
+
+.closing-block .header{
+    color: var(--secondary-color);
+    padding: 12px 0px 0px;
+    font-family: var(--default-font-family);
+}
+
+.closing-block .banner-paragraph{
+    padding: 12px 0px 12px;
+    flex: 1;
+}
+
+.closing-block .action-button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-left: 12px;
+    margin: 12px;
+
+    padding: 6px 24px 6px;
+    border-radius: 4px;
+    border-color: transparent;
+    background-color: var(--secondary-color);
+    color: var(--helper-color);
+}
+
+.closing-block .action-button:hover{
+    background-color: whitesmoke;
+    color: var(--secondary-color);
+    cursor: pointer;
+    
+}
+
+.closing-block .action-button:active{
+    background-color: var(--main-color);
+    color: whitesmoke;
+}
+
+.closing-tag{
+    display: flex;
+    justify-content: right;
+    padding: 16px var(--edge-margin) 16px;
+}
+
+.closing-tag .closing-paragraph{
+    font-size: 12px;
 }
